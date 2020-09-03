@@ -1,4 +1,4 @@
-# alpine-ssh-client
+# @lskjs/rsync
 
 A little docker image based on alpine with ssh-client and bash
 
@@ -28,12 +28,12 @@ deploy_staging:
 
 ## using from docker
 
-`docker run -it --rm isuvorov/ssh-client bash`
+`docker run -it --rm lskjs/rsync bash`
 
 ## supported tags and respective Dockerfile links
 
-- 3.1 [3.1/Dockerfile](https://github.com/isuvorov/alpine-ssh-client/blob/master/3.1/Dockerfile)
-- 3.6 [3.6/Dockerfile](https://github.com/isuvorov/alpine-ssh-client/blob/master/3.6/Dockerfile)
-- 3.9 [3.9/Dockerfile](https://github.com/isuvorov/alpine-ssh-client/blob/master/3.9/Dockerfile)
-- 3.10 [3.10/Dockerfile](https://github.com/isuvorov/alpine-ssh-client/blob/master/3.10/Dockerfile)
-- 3.11, latest [3.11/Dockerfile](https://github.com/isuvorov/alpine-ssh-client/blob/master/3.11/Dockerfile)
+- 3.1 [3.1/Dockerfile](https://github.com/lskjs/rsync/blob/master/3.1/Dockerfile)
+- 3.6 [3.6/Dockerfile](https://github.com/lskjs/rsync/blob/master/3.6/Dockerfile)
+- 3.9 [3.9/Dockerfile](https://github.com/lskjs/rsync/blob/master/3.9/Dockerfile)
+- 3.10 [3.10/Dockerfile](https://github.com/lskjs/rsync/blob/master/3.10/Dockerfile)
+- 3.11, latest [3.11/Dockerfile](https://github.com/lskjs/rsync/blob/master/3.11/Dockerfile)
