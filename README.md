@@ -7,7 +7,7 @@ A little docker image based on alpine with ssh-client and bash
 ```yml
 deploy_staging:
   stage: deploy
-  image: isuvorov/ssh-client
+  image: lskjs/rsync
   environment:
     name: staging
     url: https://sample-app.net
@@ -17,8 +17,8 @@ deploy_staging:
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
     - echo "$SSH_PRIVATE_KEY_STAGING" > ~/.ssh/id_rsa
     - chmod 600 ~/.ssh/id_rsa
-    - scp -r deploy/app_staging/. $DEPLOY_STAGING_SSH_HOST:~/app
-    - scp -r src/project/conf/. $DEPLOY_STAGING_SSH_HOST:~/app/conf
+    - rsync -avz deploy/app_staging/. $DEPLOY_STAGING_SSH_HOST:~/app
+    - rsync -avz src/project/conf/. $DEPLOY_STAGING_SSH_HOST:~/app/conf
     - ssh $DEPLOY_STAGING_SSH_HOST 'chmod 700 ~/app/app.sh'
     - ssh $DEPLOY_STAGING_SSH_HOST 'cd ~/app && ./app.sh --file docker-compose-staging.yml up'
     - ssh $DEPLOY_STAGING_SSH_HOST 'cd ~/app && ./app.sh --file docker-compose-staging.yml update'
