@@ -15,7 +15,7 @@ docker build -t lskjs/rsync:3.10 "$SCRIPT_ROOT/../3.10"
 docker build -t lskjs/rsync:3.11 "$SCRIPT_ROOT/../3.11"
 docker build -t lskjs/rsync:latest "$SCRIPT_ROOT/.."
 
-docker rmi -f $(docker images -q --filter "dangling=true")
+# docker rmi -f $(docker images -q --filter "dangling=true")
 
 docker push lskjs/rsync:3.1
 docker push lskjs/rsync:3.6
